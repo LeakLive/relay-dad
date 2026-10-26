@@ -1,0 +1,15 @@
+# Relay-Dad on Render, free Web Service. Second, separate Relay-Own server.
+# This is for dad's laptop only. Do NOT reuse the mini PC Relay key.
+# RELAY_KEY is deliberately NOT set here. Kayden sets it in the Render
+# dashboard as an Environment Variable, so no secret ever lives in
+# this file or in a repo.
+services:
+  - type: web
+    name: relay-dad
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: python server.py
+    envVars:
+      - key: RELAY_KEY
+        sync: false
